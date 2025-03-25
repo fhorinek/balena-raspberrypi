@@ -17,4 +17,9 @@ do_install:append:revpi() {
 	install -D -m 0755 ${WORKDIR}/revpi_mac ${D}/lib/udev/revpi_mac
 }
 
+do_install:append:raspberrypi5() {
+	# Install hailo AI accelerator rules
+	install -D -m 0644 ${WORKDIR}/51-hailo-udev.rules ${D}/lib/udev/rules.d/51-hailo-udev.rules
+}
+
 RDEPENDS:${PN}:append:revpi = "bash"
