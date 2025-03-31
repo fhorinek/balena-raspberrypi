@@ -21,6 +21,7 @@ do_install:append:revpi() {
 do_install:append:raspberrypi5() {
 	# Install hailo AI accelerator rules
 	install -D -m 0644 ${WORKDIR}/51-hailo-udev.rules ${D}/lib/udev/rules.d/51-hailo-udev.rules
+	install -D -m 0644 ${WORKDIR}/hailo_pci.conf ${D}/etc/modprobe.d/hailo_pci.conf
 }
 
 RDEPENDS:${PN}:append:revpi = "bash"
