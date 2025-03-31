@@ -5,6 +5,7 @@ SRC_URI:append = " \
 	file://86-nm-unmanaged-fin.rules \
 	file://revpi_mac \
 	file://51-hailo-udev.rules \
+	file://hailo_pci.conf \	
 	"
 
 do_install:append:fincm3() {
